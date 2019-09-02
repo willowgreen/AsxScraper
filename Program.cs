@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace AsxDataPuller
+namespace AsxScraper
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "AsxDataPuller";
+            Console.Title = "AsxScraper";
 
             Console.Write("Enter a 3-character ASX ticker code to display the price of: ");
             var input = Console.ReadLine();

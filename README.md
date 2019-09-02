@@ -1,7 +1,7 @@
-# AsxDataPuller
+# AsxScraper
 
 ## About
-AsxDataPuller pulls data from [all ASX-listed entities](https://www.asx.com.au/asx/research/ASXListedCompanies.csv) and stores it.
+AsxScraper pulls data from [all ASX-listed entities](https://www.asx.com.au/asx/research/ASXListedCompanies.csv) and stores it.
 
 ASX has an unofficial JSON API that this project relies on (it looks something like [this](https://www.asx.com.au/asx/1/share/AAA)).
 
