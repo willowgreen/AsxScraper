@@ -90,7 +90,16 @@ namespace AsxScraper
                     coy.MarketCap = double.Parse((data["market_cap"] ?? "0").ToString());
                     coy.NumberOfShares = long.Parse((data["number_of_shares"] ?? "0").ToString());
                     coy.Suspended = bool.Parse((data["suspended"] ?? "false").ToString());
+
+                    data = JObject.Parse(wc.DownloadString("https://www.asx.com.au/asx/1/company/" + code));
+                    coy.Industry = (data["industry_group_name"] ?? "Error encountered").ToString();
+                    coy.Sector = (data["sector_name"] ?? "Error encountered").ToString();
+                    coy.MailingAddress = (data["mailing_address"] ?? "Error encountered").ToString();
+
                     DataPoints.Add(coy);
+
+                    // testing
+                    Console.WriteLine(coy.Code + " | " + coy.Industry + " - " + coy.Sector + " | " + coy.MailingAddress);
                 }
                 catch (WebException ex)
                 {
@@ -105,10 +114,12 @@ namespace AsxScraper
                 }
             }
 
+            /*
             foreach (DataPoint dp in DataPoints)
             {
-                Console.WriteLine(dp.Code + " " + dp.LastPrice);
+                Console.WriteLine(dp.Code + " " + dp.MailingAddress);
             }
+            */
 
             Console.Write("Press any key to exit...");
             Console.ReadKey();

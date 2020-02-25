@@ -12,7 +12,7 @@ namespace AsxScraper
         {
         }
 
-        public DataPoint(string code, string isinCode, string descFull, float lastPrice, float openPrice, float dayHighPrice, float dayLowPrice, float changePrice, string changeInPercent, long volume, float bidPrice, float offerPrice, float previousClosePrice, string previousDayPercentageChange, float yearHighPrice, DateTime lastTradeDate, DateTime yearHighDate, float yearLowPrice, DateTime yearLowDate, float yearOpenPrice, DateTime yearOpenDate, float yearChangePrice, string yearChangeInPercentage, float pe, float eps, long averageDailyVolume, float annualDividendYield, double marketCap, long numberOfShares, bool suspended)
+        public DataPoint(string code, string isinCode, string descFull, float lastPrice, float openPrice, float dayHighPrice, float dayLowPrice, float changePrice, string changeInPercent, long volume, float bidPrice, float offerPrice, float previousClosePrice, string previousDayPercentageChange, float yearHighPrice, DateTime lastTradeDate, DateTime yearHighDate, float yearLowPrice, DateTime yearLowDate, float yearOpenPrice, DateTime yearOpenDate, float yearChangePrice, string yearChangeInPercentage, float pe, float eps, long averageDailyVolume, float annualDividendYield, double marketCap, long numberOfShares, bool suspended, string industry, string sector, string mailingAddress)
         {
             DataPointDate = DateTime.Now;
             Code = code;
@@ -45,6 +45,9 @@ namespace AsxScraper
             MarketCap = marketCap;
             NumberOfShares = numberOfShares;
             Suspended = suspended;
+            Industry = industry;
+            Sector = sector;
+            MailingAddress = MailingAddress;
         }
 
         public DateTime DataPointDate
@@ -168,6 +171,18 @@ namespace AsxScraper
             get; set;
         }
         public bool Suspended
+        {
+            get; set;
+        }
+        public string Industry
+        {
+            get; set;
+        }
+        public string Sector
+        {
+            get; set;
+        }
+        public string MailingAddress
         {
             get; set;
         }
